@@ -1,0 +1,38 @@
+.main {
+	background-color: #f8f8f8;
+	overflow-y: auto;
+}
+
+.drop-zone {
+	background-color: #80808087;
+	height: 500px;
+	border: dashed 1px grey;
+
+	&:hover {
+		background-color: #80808050;
+	}
+}
+
+mat-card {
+	height: 305px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&.selected{
+		background-color: #80808057;
+	}
+
+	.img-container {
+		height: 150px;
+
+		object, img {
+			max-width: 100%;
+			max-height: 150px;
+			object-fit: contain;
+		}
+	}
+}

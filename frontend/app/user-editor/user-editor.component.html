@@ -1,0 +1,30 @@
+<div class="row h-100 mx-0 justify-content-center">
+	<div class="col-12 col-lg-10 col-xl-8 py-5">
+		<ieeesb-section>
+			<p class="h5 text-center">{{user.name}}</p>
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+					<ieeesb-tags [item]="user.roles" [tags]="[]" label="Roles" [editing]="false"></ieeesb-tags>
+				</div>
+			</div>
+			<p class="error my-3" *ngIf="error">{{error}}</p>
+		</ieeesb-section>
+		<ieeesb-section>
+			<p class="h5 text-center">Añadir Rol</p>
+			<div class="row mx-0 justify-content-center mt-3">
+				<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+					<mat-form-field>
+						<input matInput [ngModel]="role" placeholder="Rol">
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row mx-0 justify-content-center mt-3">
+				<div class="col-auto">
+					<ieeesb-button label="Añadir" (click)="addRole()"></ieeesb-button>
+				</div>
+			</div>
+			<p class="error my-3" *ngIf="error">{{error}}</p>
+		</ieeesb-section>
+	</div>
+
+</div>

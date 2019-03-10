@@ -1,0 +1,190 @@
+/* You can add global styles to this file, and also import other style files */
+@import './variables.less';
+
+html, body {
+	height: 100%;
+}
+
+body {
+	//background-color: @bg-color !important;
+	background-color: white;
+	background-image: linear-gradient(-45deg, lighten(@ieee-color, 10%), @ieee-color);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center top;
+	background-attachment: fixed;
+	font-family: 'Roboto Mono', 'Roboto' !important;
+	font-size: 16px !important;
+}
+
+.mat-tab-body-wrapper {
+	height: 100%;
+}
+
+.form-control:focus, .btn-primary:focus{
+	border-color: #ced4da !important;
+	outline: 0;
+	box-shadow: none !important;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	user-drag: none;
+	-webkit-user-drag: none;
+	&.disabled {
+		pointer-events:none;
+		opacity: 0.65;
+	}
+	&:hover {
+		text-decoration: none !important;
+	}
+	&:focus {
+		border-color: #ced4da !important;
+		outline: 0;
+		box-shadow: none !important;
+	}
+}
+
+.error {
+	color: @err-color;
+}
+
+.rounded {
+	border-radius: .25rem!important;
+}
+
+.shadow-center-2 {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-center-3 {
+	box-shadow: 0 6px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-1 {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	//transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.shadow-1:hover {
+	//box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.shadow-2 {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-3 {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-4 {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.shadow-5 {
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.z-index-0 {
+	z-index: -10;
+}
+
+.z-index-1 {
+	z-index: 0;
+}
+
+.z-index-2 {
+	z-index: 10;
+}
+
+.z-index-3 {
+	z-index: 100;
+}
+
+.z-index-4 {
+	z-index: 1000;
+}
+
+.rounded-top-0 {
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+}
+
+.rounded-bottom-0 {
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+.center-childs {
+	display: flex;
+	align-items: center;
+}
+
+@primary: #4F2EDC;
+@primary-light: #947ADA;
+@gray: #9A9999;
+
+.toggle {
+	position: relative;
+	display: block;
+	width: 40px;
+	height: 20px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	transform: translate3d(0,0,0);
+	&:before {
+		content: "";
+		position: relative;
+		top: 3px;
+		left: 3px;
+		width: 34px;
+		height: 14px;
+		display: block;
+		background: @gray;
+		border-radius: 8px;
+		transition: background .2s ease;
+	}
+	span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		display: block;
+		background: white;
+		border-radius: 10px;
+		box-shadow: 0 3px 8px rgba(@gray,.5);
+		transition: all .2s ease;
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			margin: -18px;
+			width: 56px;
+			height: 56px;
+			background: rgba(@primary,.5);
+			border-radius: 50%;
+			transform: scale(0);
+			opacity: 1;
+			pointer-events: none;
+		}
+	}
+	&.checked {
+		&:before {
+			background: lighten(@ieee-color, 10%);
+		}
+		span{
+			background: @ieee-color;
+			transform: translateX(20px);
+			transition: all .2s cubic-bezier(.8,.4,.3,1.25), background .15s ease;
+			box-shadow: 0 3px 8px rgba(@ieee-color,.2);
+			&:before {
+				transform: scale(1);
+				opacity: 0;
+				transition: all .4s ease;
+			}
+		}
+	}
+}
