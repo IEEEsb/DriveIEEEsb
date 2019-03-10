@@ -92,7 +92,7 @@ export class BrowserComponent implements OnInit {
 
 	getPrevImage(file) {
 		if (this.isImage(file)) {
-			return '/api/file/' + file._id;
+			return 'api/file/' + file._id;
 		}
 
 		return 'assets/file-icons/' + this.getFileExtension(file) + '.png';
