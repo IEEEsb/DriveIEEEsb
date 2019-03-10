@@ -95,7 +95,7 @@ export class BrowserComponent implements OnInit {
 			return '/api/file/' + file._id;
 		}
 
-		return '/assets/file-icons/' + this.getFileExtension(file) + '.png';
+		return 'assets/file-icons/' + this.getFileExtension(file) + '.png';
 	}
 
 }

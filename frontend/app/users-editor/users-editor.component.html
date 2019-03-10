@@ -2,7 +2,7 @@
 	<div class="col-12">
 		<ieeesb-title title="Usuarios" [(search)]="search"></ieeesb-title>
 		<ieeesb-section>
-			<ieeesb-list [items]="users | filter:search:['name']" [labels]="['Nombre', 'Saldo €']" [keys]="['name', 'money']" link="/admin/users/" linkKey="_id" linkLabel="Detalles"></ieeesb-list>
+			<ieeesb-list [items]="users | filter:search:['name']" [labels]="['Nombre', 'Roles']" [keys]="['name', 'roles']" link="/admin/users/" linkKey="_id" linkLabel="Detalles"></ieeesb-list>
 		</ieeesb-section>
 	</div>
 </div>

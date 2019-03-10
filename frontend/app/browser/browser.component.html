@@ -28,7 +28,7 @@
 									<mat-card-content>
 										<div class="row mb-1 mx-0 img-container">
 											<div class="offset-1 col-10 px-0 align-self-center">
-												<img class="w-100" [src]="getPrevImage(file)" onerror="this.src='/assets/file-icons/file.png';">
+												<img class="w-100" [src]="getPrevImage(file)" onerror="this.src='assets/file-icons/file.png';">
 											</div>
 										</div>
 									</mat-card-content>
@@ -58,7 +58,7 @@
 						</ieeesb-section>
 						<div class="row justify-content-center mt-5">
 							<div class="col-6">
-								<mat-file-upload-queue #fileUploadQueue fileAlias="file" httpUrl="/api/file/upload" multiple>
+								<mat-file-upload-queue #fileUploadQueue fileAlias="file" httpUrl="api/file/upload" multiple>
 									<mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
 								</mat-file-upload-queue>
 							</div>
