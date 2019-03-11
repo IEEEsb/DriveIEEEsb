@@ -29,6 +29,10 @@ export class MainComponent implements OnInit {
 		this.userService.getLoggedUser().subscribe((user) => {
 			this.user = user;
 			this.menuItems = {
+				logo: {
+					type: 'link',
+					link: 'https://ieeesb.es',
+				},
 				left: [
 				],
 				right: [
