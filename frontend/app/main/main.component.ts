@@ -14,7 +14,33 @@ const config = require('../../../config.json');
 })
 export class MainComponent implements OnInit {
 
-	menuItems = {left: [], right: []};
+	menuItems = {
+		logo: {
+			type: 'link',
+			link: 'https://ieeesb.es',
+		},
+		left: [
+		],
+		right: [
+			{
+				text: 'Login',
+				type: 'callback', // router, link or callback
+				callback: this.login.bind(this),
+			},
+			{
+				text: 'Administrar',
+				type: 'router',
+				link: '/admin/browser',
+				roles: [config.adminRole],
+			},
+			{
+				text: 'Logout',
+				type: 'callback',
+				callback: this.logout.bind(this),
+				roles: [],
+			}
+		]
+	}
 
 	user;
 	activeLink = '';
@@ -28,33 +54,6 @@ export class MainComponent implements OnInit {
 	ngOnInit() {
 		this.userService.getLoggedUser().subscribe((user) => {
 			this.user = user;
-			this.menuItems = {
-				logo: {
-					type: 'link',
-					link: 'https://ieeesb.es',
-				},
-				left: [
-				],
-				right: [
-					{
-						text: 'Login',
-						type: 'callback', // router, link or callback
-						callback: this.login.bind(this),
-					},
-					{
-						text: 'Administrar',
-						type: 'router',
-						link: '/admin/browser',
-						roles: [config.adminRole],
-					},
-					{
-						text: 'Logout',
-						type: 'callback',
-						callback: this.logout.bind(this),
-						roles: [],
-					}
-				]
-			}
 		});
 	}
 
